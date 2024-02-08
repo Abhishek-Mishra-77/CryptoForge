@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import millify from 'millify';
 import { Col, Typography, Select, Row } from 'antd';
-import { MoneyCollectOutlined, DollarCircleOutlined, FundOutlined, NumberOutlined, ExclamationCircleOutlined, StopOutlined, TrophyOutlined, ThunderboltOutlined, CheckOutlined } from '@ant-design/icons';
+import { MoneyCollectOutlined, DollarCircleOutlined, FundOutlined, NumberOutlined, ExclamationCircleOutlined, StopOutlined, ThunderboltOutlined, CheckOutlined } from '@ant-design/icons';
 import { useSelector } from 'react-redux';
 import Loader from './Loader';
 import LineChart from './Chart';
@@ -68,7 +68,7 @@ const CryptoDetails = () => {
             >
                 {time.map((date) => <Option key={date}>{date}</Option>)}
             </Select>
-            <LineChart coinHistory={'coinHistory'} currentPrice={millify(cryptoDetails.price)} coinName={cryptoDetails.name} />
+            <LineChart timePeriod={timePeriod} coinHistory={'coinHistory'} currentPrice={millify(cryptoDetails.price)} coinName={cryptoDetails.name} />
             <Col className='stats-container'>
                 <Col className='coin-value-statistics'>
                     <Col className='coin-value=statistics-heading'>
