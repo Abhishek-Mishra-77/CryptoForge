@@ -48,7 +48,7 @@ const Exchanges = () => {
                                 )}
                             >
                                 <Avatar className="exchange-image" src={exchange.iconUrl}></Avatar>
-                                {HTMLReactParser(cryptoDesc?.[index] + "   " || '')}
+                                <p>{cryptoDesc?.[index] + "   " || ''}</p>
                                 <Link to={exchange.coinrankingUrl} target='_blank'>Click here to know more</Link>
                             </Panel>
                         </Collapse>
