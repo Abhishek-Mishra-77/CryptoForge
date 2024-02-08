@@ -3,7 +3,6 @@ import { Collapse, Row, Col, Typography, Avatar } from 'antd';
 import Loader from './Loader';
 import { useSelector } from 'react-redux';
 import millify from 'millify';
-import HTMLReactParser from 'html-react-parser';
 import { Link } from 'react-router-dom';
 
 const { Text } = Typography;
