@@ -24,7 +24,7 @@ const CryptoDetails = () => {
             const filteredData = coins.find((coin) => coin.rank === Number(coinId));
             setCryptoDetails(filteredData);
         }
-    }, [coins]);
+    }, [coins, coinId]);
 
     if (isLoading) return <Loader />;
 
