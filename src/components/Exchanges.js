@@ -11,9 +11,6 @@ const { Panel } = Collapse;
 const Exchanges = () => {
     const { data, isLoading } = useSelector((state) => state.crypto);
     const { coins } = data ? data : [];
-    const { cryptoNews } = useSelector((state) => state.cryptoNews);
-    const cryptosNews = cryptoNews?.articles?.slice(0, 50);
-    const cryptoDesc = cryptosNews?.map((crypto) => crypto.description)
 
 
     if (isLoading) return <Loader />;
