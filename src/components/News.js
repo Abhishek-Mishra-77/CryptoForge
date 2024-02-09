@@ -11,11 +11,12 @@ const { Title, Text } = Typography;
 const { Option } = Select;
 
 const News = ({ simplified }) => {
-    const count = simplified ? 10 : 100;
+    const count = simplified ? 10 : 20;
     const { data } = useSelector((state) => state.crypto);
     const { coins } = data ? data : [];
     const { cryptoNews, isLoading } = useSelector((state) => state.cryptoNews);
-    const cryptosNews = cryptoNews?.articles;
+    const cryptosNews = cryptoNews?.data;
+    console.log(cryptosNews)
 
     if (isLoading) return <Loader />
 
@@ -46,7 +47,7 @@ const News = ({ simplified }) => {
                         <a href={news.url} target='_black' rel='noreferrer'>
                             <div className='news-image-container'>
                                 <Title className='news-title' level={4}>{news.title.slice(0, 20)}</Title>
-                                <img style={{ width: '100px', height: '100px' }} src={news.urlToImage || alternameImg || 'https://cdn.mos.cms.futurecdn.net/aNSyW6WY7t2j9fMrzaPPVb-1200-80.jpeg'} alt='news' />
+                                <img style={{ width: '100px', height: '100px' }} src={news.thumb_2x || alternameImg || 'https://cdn.mos.cms.futurecdn.net/aNSyW6WY7t2j9fMrzaPPVb-1200-80.jpeg'} alt='news' />
                             </div>
                             <p>
                                 {news.description.slice(0, 150)}

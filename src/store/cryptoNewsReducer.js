@@ -2,11 +2,11 @@ import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
 import axios from "axios";
 
 export const fetchCryptoNewsData = createAsyncThunk('crytoNewsData', async () => {
-    const response = await axios.get('https://newsapi.org/v2/everything?q=cryptocurrency&apiKey=783fbc48c6334623b72e26b46af4f95c');
+    const response = await axios.get('https://api.coingecko.com/api/v3/news');
     const { data } = response;
+    console.log(data)
     return data;
 })
-
 
 const cryptoNewsSlice = createSlice({
     name: 'crytoNewsData',
